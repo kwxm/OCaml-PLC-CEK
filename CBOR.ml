@@ -109,7 +109,7 @@ and extract_string byte1 r f =
     let n = extract_number byte1 r in get_s r n
 and extract_bigint r =
   let byte1 = get_byte r in
-  let s = extract_string byte1 r (function `Text s -> s | _ -> fail_cbor "extract_bigint: not a bytes chunk") in
+  let s = extract_string byte1 r (function `Bytes s -> s | _ -> fail_cbor "extract_bigint: not a bytes chunk") in
   z_of_string s
 and extract_positive_bigint r = `BigInt (extract_bigint r)
 and extract_negative_bigint r =
