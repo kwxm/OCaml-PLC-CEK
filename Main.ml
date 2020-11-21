@@ -1,6 +1,9 @@
 (* ---------------- Main ---------------- *)
 
+open Absyn
 open Cek
+open Decoder
+open Printf
 
 let format_time : float -> string =
   fun t ->

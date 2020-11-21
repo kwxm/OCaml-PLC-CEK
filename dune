@@ -1,5 +1,6 @@
 (executable
-  (name cek)
+  (name Main)
   (modes byte native)
   (libraries ocplib-endian zarith)
 )
+
