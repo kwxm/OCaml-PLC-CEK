@@ -1,4 +1,4 @@
-(* Deserialisation Code extracted from the OCaml CBOR library at
+(* Deserialisation code extracted from the OCaml CBOR library at
    https://opam.ocaml.org/packages/cbor/, modified to handle bignums and expose
    most functions. *)
 
