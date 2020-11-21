@@ -19,14 +19,15 @@ let time_execution : name term -> name term * float =
     (result, etime)
 
 let time_ntimes : name term -> int -> unit =
-  fun t k ->
-  let rec aux t k =
-    if k <= 0 then ()
+  fun t count ->
+  let rec aux t k total =
+    if k <= 0 then total
     else let (_,time) = time_execution t in
          printf "%f\n%!" time;
-         aux t (k-1)
-  in aux t k
-
+         aux t (k-1) (total +. time)
+  in let total_time = aux t count 0.0 in
+     printf "# Average time over %d runs = %s\n" count
+       (format_time ((total_time /. (float_of_int count))))
 
 let usage () =
   let cmd = Filename.basename Sys.executable_name in
