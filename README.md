@@ -23,8 +23,8 @@ You can also type
 ```
 
 to run the program `n` times: the execution times (in seconds) will be printed
-each time, but not the program result.  This is a quick way to get benchmarking
-data.
+each time, and at the end the average time will be printed (but not the program
+result).  This is a quick way to get benchmarking data.
 
 ### Input data
 The executable consumes Plutus Core programs in CBOR format (serialised with
