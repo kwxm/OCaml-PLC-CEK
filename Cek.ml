@@ -117,7 +117,7 @@ let rec subst_free_names: cek_val_env -> name term -> name term =
                 else let v = lookup_name x env in
                      discharge_cek_value v
     | LamAbs (x,body) -> let body' = go (IntSet.add x.uniq bvs) body
-                        in LamAbs (x, body')
+                         in LamAbs (x, body')
     | Apply (fn, arg) -> let fn' = go bvs fn in
                          let arg' = go bvs arg in
                          Apply (fn',arg')
