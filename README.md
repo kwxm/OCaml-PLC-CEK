@@ -1,6 +1,6 @@
 A basic CEK machine for Plutus Core, implemented in OCaml.
 
-To compile this, (install OCaml)[https://ocaml.org/docs/install.html] (probably
+To compile this, [install OCaml](https://ocaml.org/docs/install.html) (probably
 with OPAM) and then type `make`.  That should leave an executable called `cek`
 in this directory.  This consumes Plutus Core programs in CBOR format (serialised
 with `Name`s, not de Bruijn indices.  You can get these by using
