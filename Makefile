@@ -17,4 +17,7 @@ test3:
 SRC=Absyn.ml CBOR.ml Cek.ml Decoder.ml Main.ml
 
 cek:
+	ocamlopt -I ~/.opam/4.11.1/lib/ocplib-endian/ -I ~/.opam/4.11.1/lib/zarith ocplib_endian.cmxa zarith.cmxa ${SRC} -o cek
+
+cek-bytecode:
 	ocamlc -I ~/.opam/4.11.1/lib/ocplib-endian/ -I ~/.opam/4.11.1/lib/zarith ocplib_endian.cma zarith.cma ${SRC} -o cek
