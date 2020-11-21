@@ -129,8 +129,8 @@ and extract r =
   | 3 -> `Text (extract_string byte1 r (function `Text s -> s | _ -> fail_cbor "extract: not a text chunk"))
   | 4 -> `Array (extract_list byte1 r extract)
   | 5 -> `Map (extract_list byte1 r extract_pair)
-  | 6 -> extract_semantic_value byte1 r 
-  | 7 -> 
+  | 6 -> extract_semantic_value byte1 r
+  | 7 ->
     begin match get_additional byte1 with
     | n when n < 20 -> `Simple n
     | 20 -> `Bool false
@@ -182,4 +182,3 @@ let to_diagnostic item =
   in
   write item;
   Buffer.contents b
-

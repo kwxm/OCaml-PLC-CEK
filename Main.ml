@@ -44,5 +44,5 @@ let _ =
      end
   | [_; "-t"; n; file] ->
      let Program (_,_,_,body) = Decoder.read_cbor file in
-     time_ntimes body (int_of_string n) 
+     time_ntimes body (int_of_string n)
   | _ -> usage ()

@@ -15,7 +15,7 @@ let fail fmt = ksprintf (fun s -> raise (CekError s)) fmt
 
 module IntSet = Set.Make(struct type t = int let compare = compare end)
 module IntMap = Map.Make(struct type t = int let compare = compare end)
-              
+
 type argType = TermArg | TypeArg
 type arity = argType list
 
@@ -247,4 +247,3 @@ and apply_builtin : context -> builtin -> cek_value list -> name term =
     | _ -> fail "Bad application in apply_builtin: %s: [%s]"
              (show_builtin bn)
              (String.concat "," (List.map show_cek_value args))
-
