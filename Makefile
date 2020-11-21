@@ -5,13 +5,13 @@ clean:
 	dune clean && rm -f *.cmo *.cmi *.bytes *~
 
 test1:
-	dune exec --profile release ./cek.exe examples/mul.ncbor
+	dune exec --profile release ./Main.exe examples/basic/mul.ncbor
 
 test2:
-	dune exec --profile release ./cek.exe examples/fac.ncbor
+	dune exec --profile release ./Main.exe examples/fac.ncbor
 
 test3:
-	dune exec --profile release ./cek.exe examples/prime40.ncbor
+	dune exec --profile release ./Main.exe examples/prime40.ncbor
 
 
 SRC=Absyn.ml CBOR.ml Cek.ml Decoder.ml Main.ml
