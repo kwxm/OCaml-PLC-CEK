@@ -4,8 +4,9 @@ A basic CEK machine for Plutus Core, implemented in OCaml.
 
 ### Installation 
 To compile the machine, [install OCaml](https://ocaml.org/docs/install.html) (probably
-with OPAM) and then type `make`.  That should leave an executable called `cek`
-in the top-level directory.
+with OPAM) and the `dune` build tool and the `zarith` and `ocplib-endian` libraries 
+(`opam install dune zarith ocplib-endian`)  and then type `make`.  That should 
+leave an executable called `cek` in the top-level directory.
 
 
 ### Running the program
