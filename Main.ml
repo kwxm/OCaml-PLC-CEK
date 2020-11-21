@@ -18,6 +18,8 @@ let time_execution : name term -> name term * float =
     let etime = Sys.time () -. time1 in
     (result, etime)
 
+(* Run the program `count` times, printing the individual
+   execution times and then the average at the end. *)
 let time_ntimes : name term -> int -> unit =
   fun t count ->
   let rec aux t k total =
