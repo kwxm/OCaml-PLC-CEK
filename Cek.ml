@@ -116,16 +116,14 @@ let rec subst_free_names: cek_val_env -> name term -> name term =
                 then Var x
                 else let v = lookup_name x env in
                      discharge_cek_value v
-    | LamAbs (x,body) -> let body' = go (IntSet.add x.uniq bvs) body
+    | LamAbs (x,body)  -> let body' = go (IntSet.add x.uniq bvs) body
                          in LamAbs (x, body')
-    | Apply (fn, arg) -> let fn' = go bvs fn in
+    | Apply (fn, arg)  -> let fn' = go bvs fn in
                          let arg' = go bvs arg in
                          Apply (fn',arg')
     | Delay term       -> Delay (go bvs term)
     | Force term       -> Force (go bvs term)
-    | Constant _ -> t
-    | Builtin _ -> t
-    | Error -> t
+    | Constant _ | Builtin _ | Error -> t
   in go IntSet.empty t
 
 and discharge_cek_value : cek_value -> name term =
