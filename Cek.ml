@@ -81,7 +81,7 @@ let show_cek_value : cek_value -> string =
   | VCon c -> show_const c
   | VDelay (t,_) -> show_term t
   | VLamAbs (x,t,_) -> sprintf "lam %s %s" (show_name x) (show_term t)
-  | VBuiltin (_,_,_,_,_,_) -> "builtin"
+  | VBuiltin (bn,_,_,_,_,_) -> "builtin " ^ show_builtin bn
 
 (* Attempt to reconstruct a partial builtin application when there's an arity mismatch *)
 let mk_builtin_application : builtin -> arity -> int -> (name term list) -> name term =
