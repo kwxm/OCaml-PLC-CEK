@@ -12,9 +12,9 @@ let (@@) f x = f x
 exception CekError of string
 let fail fmt = ksprintf (fun s -> raise (CekError s)) fmt
 
-
-module IntSet = Set.Make(struct type t = int let compare = compare end)
-module IntMap = Map.Make(struct type t = int let compare = compare end)
+module Int = struct type t = int let compare = compare end
+module IntSet = Set.Make (Int)
+module IntMap = Map.Make (Int)
 
 type argType = TermArg | TypeArg
 type arity = argType list
